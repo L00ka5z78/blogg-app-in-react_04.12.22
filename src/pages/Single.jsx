@@ -1,6 +1,7 @@
 import React from 'react';
 import Edit from '../img/edit.png';
 import Delete from '../img/delete.png';
+import Menu from '../components/Menu';
 import { Link } from 'react-router-dom';
 
 export default function Single() {
@@ -43,7 +44,9 @@ export default function Single() {
           adipisci velit.
         </p>
       </div>
-      <div className="menu">mwnu</div>
+      <div className="menu">
+        <Menu />
+      </div>
     </div>
   );
 }
