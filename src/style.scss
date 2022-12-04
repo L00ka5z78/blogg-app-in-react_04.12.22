@@ -9,6 +9,11 @@ $lightGreen: #b9e7e7;
   .container {
     width: 1024px;
 
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
     //login and register pages
 
     .auth {
@@ -67,12 +72,193 @@ $lightGreen: #b9e7e7;
         //displays horizontally logo and links
         padding: 10px 0px;
         display: flex;
+        align-items: center;
         //separates logo and links
         justify-content: space-between;
         .logo {
+          img {
+            width: 120px;
+          }
         }
         .links {
+          //horizonatal display of all links
+          display: flex;
+          //centering all links
+          align-items: center;
+          gap: 10px;
+          h6 {
+            font-size: 16px;
+            font-weight: 300;
+          }
+          span {
+            cursor: pointer;
+          }
+          .write {
+            //circle write form navbar
+            background-color: $lightGreen;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            //centering text in the circle
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 300;
+            border: 1px solid white;
+
+            &:hover {
+              //   width: 48px;
+              //   height: 48px;
+              color: teal;
+              background-color: white;
+              border: 1px solid teal;
+            }
+          }
         }
+      }
+    }
+    //footer
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      background-color: $lightGreen;
+      //centers all
+      display: flex;
+      align-items: center;
+      //places on the sides
+      justify-content: space-between;
+      font-size: 12px;
+      img {
+        height: 50px;
+      }
+    }
+    //home page
+
+    .home {
+      .posts {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+
+        .post {
+          //displays post & img horizontal
+          display: flex;
+          gap: 100px;
+
+          &:nth-child(2n + 1) {
+            //set reverse every second one post on page
+            flex-direction: row-reverse;
+          }
+
+          .img {
+            flex: 2;
+            position: relative;
+
+            &::after {
+              content: '';
+              width: 100%;
+              height: 100%;
+              background-color: $lightGreen;
+              position: absolute;
+              top: 20px;
+              left: -20px;
+              z-index: -1;
+            }
+
+            img {
+              width: 100%;
+              max-height: 400px;
+              object-fit: cover;
+            }
+          }
+          .content {
+            flex: 3;
+            //centers thing vertically
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h1 {
+              font-size: 48px;
+            }
+            p {
+              font-size: 18px;
+            }
+            button {
+              width: max-content;
+              padding: 10px 20px;
+              border: none;
+              cursor: pointer;
+              background-color: white;
+              border: 1px solid teal;
+              color: teal;
+
+              &:hover {
+                border: 1px solid white;
+                background-color: $lightGreen;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
+    //single
+    .single {
+      display: flex;
+      gap: 50px;
+
+      .content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        .user {
+          //user div horizontally
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 14px;
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          span {
+            font-weight: bold;
+          }
+        }
+        .edit {
+          display: flex;
+          gap: 5px;
+
+          img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+        h1 {
+          font-size: 42px;
+          color: #333;
+        }
+        p {
+          text-align: justify;
+          line-height: 30px;
+        }
+      }
+      .menu {
+        flex: 2;
       }
     }
   }
